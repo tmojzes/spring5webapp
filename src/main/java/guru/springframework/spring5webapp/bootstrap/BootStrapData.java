@@ -28,14 +28,13 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println("Started in Bootstrap");
 
         Publisher publisher = new Publisher();
-        publisher.setName("Mozaik");
-        publisher.setZip("7624");
-        publisher.setState("Baranya");
-        publisher.setCity("Pécs");
+        publisher.setName("SFG Publishing");
+        publisher.setCity("St Petersburg");
+        publisher.setState("FL");
 
         publisherRepository.save(publisher);
 
-        System.out.println("Number of publishers: " + publisherRepository.count());
+        System.out.println("Publisher Count: " + publisherRepository.count());
 
         Author eric = new Author("Eric", "Evans");
         Book ddd = new Book("Domain Driven Design", "123123");
@@ -62,6 +61,6 @@ public class BootStrapData implements CommandLineRunner {
         publisherRepository.save(publisher);
 
         System.out.println("Number of Books: " + bookRepository.count());
-        System.out.println("Publisher number of books: " + publisher.getBooks().size());
+        System.out.println("Publisher Number of Books: " + publisher.getBooks().size());
     }
 }
